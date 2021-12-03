@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Three.js app</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<!-- Including the three.js library -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js">
+
+	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/104/three.min.js">
+
+	</script>
+
+	<script src="script.js" type="module">
+	</script>
+
+	<canvas id="inputCanvas" width="320" height="240" style="display:none"></canvas>
+
+	<video id="inputVideo" autoplay loop></video>
+
+	<script src="headtrackr.js">
+
+	</script>
+
+	<script>
+		var videoInput = document.getElementById('inputVideo');
+    var canvasInput = document.getElementById('inputCanvas');
+
+    var htracker = new headtrackr.Tracker();
+    htracker.init(videoInput, canvasInput);
+    htracker.start();
+	</script>
+
+  <style> #inputCanvas, #inputVideo { display: none; } </style>
+
+
+</body>
+
+</html>
